@@ -32,7 +32,10 @@ class CountdownTimer {
   }
 
   updateClockface({ days, hours, mins, secs }) {
-    refs.clockFace.textContent = `${days}:${hours}:${mins}:${secs}`;
+    refs.days.textContent = `${days}`;
+    refs.hours.textContent = `${hours}`;
+    refs.mins.textContent = `${mins}`;
+    refs.secs.textContent = `${secs}`;
   }
 
   pad(value) {
@@ -42,8 +45,6 @@ class CountdownTimer {
   timeFinish(deltaTime) {
     if (deltaTime < 0) {
       clearInterval(this.intervalId);
-      const eventTimer = document.querySelector(".event-description");
-      eventTimer.remove();
     }
     return;
   }
